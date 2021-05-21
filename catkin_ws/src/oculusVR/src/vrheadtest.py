@@ -10,6 +10,7 @@ class subvrandpub(object):
     def __init__(self):
         self.sub = rospy.Subscriber("vr/head", PoseStamped, self.callback)
         self.test = False
+        a = False
         # self.pub_pan = rospy.Publisher('/pan/command', Float64, queue_size=10)
         # self.pub_tilt = rospy.Publisher('/tilt/command', Float64, queue_size=10)
 
@@ -22,9 +23,11 @@ class subvrandpub(object):
         # self.pub_pan.publish(your_euler[2])
         # self.pub_tilt.publish(your_euler[1])
         self.test = True
-        assert self.test == True
+        a = True
+        # assert self.test == True
     
 if __name__ == '__main__':
     rospy.init_node('listener', anonymous=True)
     SUB = subvrandpub()
     rospy.spin() #run forever
+    assert a == True
