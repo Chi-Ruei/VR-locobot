@@ -9,7 +9,7 @@ from geometry_msgs.msg import PoseStamped
 class subvrandpub(object):
     def __init__(self):
         self.sub = rospy.Subscriber("vr/head", PoseStamped, self.callback)
-        self.test = false
+        self.test = False
         # self.pub_pan = rospy.Publisher('/pan/command', Float64, queue_size=10)
         # self.pub_tilt = rospy.Publisher('/tilt/command', Float64, queue_size=10)
 
@@ -21,8 +21,8 @@ class subvrandpub(object):
         
         # self.pub_pan.publish(your_euler[2])
         # self.pub_tilt.publish(your_euler[1])
-        self.test = true
-        assert self.test == true
+        self.test = True
+        assert self.test == True
     
 if __name__ == '__main__':
     rospy.init_node('listener', anonymous=True)
